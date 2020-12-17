@@ -8,10 +8,8 @@ count = 0
 
 @app.route('/')
 def index():
-    global count
-    count += 1
-    output = "Hello from application " + str(count) +"<br/>"
-    output = output + "Host name: " +socket.gethostname()
+    output = "<h2>This is a Python web app deployed on Amazon EKS</h2>"
+    output = output + "<h3>Host name: " +socket.gethostname() +"</h3>"
 
     return output
     #return 'Goodbye from application ' + str(count)
