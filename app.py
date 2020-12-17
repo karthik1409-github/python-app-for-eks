@@ -1,4 +1,6 @@
 from flask import Flask
+import socket
+
 app = Flask(__name__)
 
 #for demo purposes only to see different requests handled by instances of the application
@@ -8,7 +10,10 @@ count = 0
 def index():
     global count
     count += 1
-    return 'Hello from application ' + str(count)
+    output = "Hello from application " + str(count) +"<br/>"
+    output = output + "Host name: " +socket.gethostname()
+
+    return output
     #return 'Goodbye from application ' + str(count)
 
 if __name__ == '__main__':
